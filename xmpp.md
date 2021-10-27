@@ -73,9 +73,7 @@ https://hg.prosody.im/prosody-modules/
 ## Configure Prosody
 
 <details>
-
 <summary>/etc/prosody/prosody.lua.cfg</summary>
-
 
 ```
 log = "/var/log/prosody/prosody.log"
