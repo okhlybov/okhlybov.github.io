@@ -14,7 +14,6 @@
 
 Substitute ***{upload.}the.site*** everywhere with actual domains and ***email@email.com*** with the SSL certificate issuer's e-mail.
 
-## 
 
 ## Configure the system
 
