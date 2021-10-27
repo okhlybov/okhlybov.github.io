@@ -76,10 +76,13 @@ https://hg.prosody.im/prosody-modules/
 <details>
 <summary>/etc/prosody/prosody.lua.cfg</summary>
 
+
+
 ```
 log = "/var/log/prosody/prosody.log"
 pidfile = "/var/run/prosody/prosody.pid"
 plugin_paths = {"/var/lib/prosody/modules"}
+https_certificate="certs/upload.the.site.crt"
 
 modules_enabled = {
   "tls";
@@ -101,13 +104,13 @@ http_files_dir = "/var/www"
 http_dir_listing = false
 archive_expires_after = "1m"
 authentication = "internal_hashed"
+disco_items = {{"upload.the.site"}} --< Substitute upload.the.site with actual upload server domain
 ssl = {
   key = "certs/the.site.key"; --< Substitute the.site with actual domain
   certificate = "certs/the.site.crt"; --< Substitute the.site with actual domain
 }
 
 Component "upload.the.site" "http_upload" --< Substitute upload.the.site with actual upload server domain
-disco_items = {{"upload.the.site"}} --< Substitute upload.the.site with actual upload server domain
 ```
 </details>
 
