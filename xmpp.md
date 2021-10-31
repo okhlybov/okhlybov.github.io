@@ -72,7 +72,9 @@ https://hg.prosody.im/prosody-modules/
 
 ## Configure Prosody
 
-<details><summary>/etc/prosody/prosody.lua.cfg</summary>
+<details>
+  
+<summary>/etc/prosody/prosody.lua.cfg</summary>
 
 ```
 log = "/var/log/prosody/prosody.log"
@@ -108,6 +110,7 @@ ssl = {
 
 Component "upload.the.site" "http_upload" --< Substitute upload.the.site with actual upload server domain
 ```
+
 </details>
 
 https://prosody.im/doc/configure
@@ -132,9 +135,12 @@ sudo systemctl restart prosody
 
 ## Arrange for further certificate renewals
 
-<details><summary>sudo crontab -e</details>
+<details>
+  
+<summary>sudo crontab -e</details>
 
 ```
 @daily /usr/bin/certbot renew --deploy-hook "/usr/bin/prosodyctl --root cert import /etc/letsencrypt/live && /usr/bin/systemctl restart prosody"
 ```
+
 </details>
