@@ -137,7 +137,7 @@ sudo systemctl restart prosody
 
 <details>
   
-<summary>sudo crontab -e</details>
+<summary>sudo crontab -e</summary>
 
 ```
 @daily /usr/bin/certbot renew --deploy-hook "/usr/bin/prosodyctl --root cert import /etc/letsencrypt/live && /usr/bin/systemctl restart prosody"
