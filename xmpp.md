@@ -80,7 +80,7 @@ https://hg.prosody.im/prosody-modules/
 log = "/var/log/prosody/prosody.log"
 pidfile = "/var/run/prosody/prosody.pid"
 plugin_paths = {"/var/lib/prosody/modules"}
-https_certificate="certs/upload.the.site.crt"
+https_certificate="certs/upload.the.site.crt" --< Substitute upload.the.site with actual upload server domain
 
 modules_enabled = {
   "tls";
