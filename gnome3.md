@@ -21,8 +21,10 @@ sudo pacman -S imwheel
 "^epiphany$"
 None, Up,   Button4, 4
 None, Down, Button5, 4
-
 "^chromium$"
+None, Up,   Button4, 4
+None, Down, Button5, 4
+"^google-chrome$"
 None, Up,   Button4, 4
 None, Down, Button5, 4
 ```
