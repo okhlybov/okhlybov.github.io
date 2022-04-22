@@ -9,13 +9,13 @@ where, unlike in Firefox, the scrolling is painfully slow.
 
 #### Arch Linux
 
-```
+```shell
 sudo pacman -S imwheel
 ```
 
 ### Configure imwheel
 
-`~/.imwheelrc`:
+`~/.imwheelrc`
 
 ```
 "^epiphany$"
@@ -29,11 +29,11 @@ None, Up,   Button4, 4
 None, Down, Button5, 4
 ```
 
-https://en.linuxportal.info/tutorials/graphical-user-interface/general/how-to-control-the-mouse-gorget-speed-with-the-help-of-the-imwheel-program
+<https://en.linuxportal.info/tutorials/graphical-user-interface/general/how-to-control-the-mouse-gorget-speed-with-the-help-of-the-imwheel-program>
 
 ### Configure systemd unit for imwheel
 
-`~/.config/systemd/user/imwheel.service`:
+`~/.config/systemd/user/imwheel.service`
 
 ```
 [Unit]
@@ -54,10 +54,10 @@ WantedBy=graphical-session.target
 
 ### Enable the systemd unit
 
-```
+```shell
 sudo systemctl daemon-reload
 systemctl --user enable imwheel
-systemctl --user start imwheel
+systemctl --user restart imwheel
 ```
 
-https://wiki.archlinux.org/title/Systemd/User
+<https://wiki.archlinux.org/title/Systemd/User>

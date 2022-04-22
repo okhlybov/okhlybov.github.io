@@ -17,7 +17,7 @@ Substitute ***{upload.}the.site*** everywhere with actual domains and ***email@e
 
 ## Configure the system
 
-```
+```shell
 sudo hostnamectl set-hostname the.site
 sudo apt-get install certbot mercurial
 ```
@@ -26,7 +26,7 @@ sudo apt-get install certbot mercurial
 
 ## Configure the firewall
 
-```
+```shell
 for p in 80 443 5222 5269 5280 5281; do sudo firewall-cmd --zone=public --permanent --add-port=$p/tcp; done
 sudo firewall-cmd --reload
 ```
@@ -35,38 +35,38 @@ sudo firewall-cmd --reload
 
 ## Obtain Let's Encrypt SSL certificates
 
-```
+```shell
 sudo certbot certonly -n --standalone --agree-tos --email email@email.com -d the.site -d upload.the.site
 ```
 
-https://serverspace.io/support/help/how-to-get-lets-encrypt-ssl-on-ubuntu/
+<https://serverspace.io/support/help/how-to-get-lets-encrypt-ssl-on-ubuntu>
 
 
 
 ## Install Prosody
 
-```
+```shell
 wget https://prosody.im/files/prosody-debian-packages.key -O- | sudo apt-key add -
 echo deb http://packages.prosody.im/debian $(lsb_release -sc) main | sudo tee -a /etc/apt/sources.list
 sudo apt-get update
 sudo apt-get install prosody
 ```
 
-https://prosody.im/download/package_repository
+<https://prosody.im/download/package_repository>
 
-https://prosody.im/download/start
+<https://prosody.im/download/start>
 
 
 
 ## Install 3rd party Prosody modules
 
-```
+```shell
 cd /var/lib/prosody
 sudo hg clone https://hg.prosody.im/prosody-modules prosody-modules
 sudo ln -s -t modules ../prosody-modules/mod_http_upload/mod_http_upload.lua
 ```
 
-https://hg.prosody.im/prosody-modules/
+<https://hg.prosody.im/prosody-modules>
 
 
 
@@ -113,13 +113,13 @@ Component "upload.the.site" "http_upload" --< Substitute upload.the.site with ac
 
 </details>
 
-https://prosody.im/doc/configure
+<https://prosody.im/doc/configure>
 
 
 
 ## Install the SSL certificates
 
-```
+```shell
 sudo prosodyctl --root cert import /etc/letsencrypt/live
 ```
 
@@ -127,7 +127,7 @@ sudo prosodyctl --root cert import /etc/letsencrypt/live
 
 ## Restart Prosody
 
-```
+```shell
 sudo systemctl restart prosody
 ```
 
