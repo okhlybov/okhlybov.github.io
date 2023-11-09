@@ -23,6 +23,7 @@ _The original repository is slightly dated yet still usable as a fallback._
 Bootstrap the native Tcl single executable
 
 ```shell
+build/pre.sh
 KC_TCL_STATICPKGS=1 KITCREATOR_PKGS=" " ./kitcreator --enable-kit-storage=cvfs --disable-threads 
 ```
 
