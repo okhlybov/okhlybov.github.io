@@ -43,18 +43,14 @@ cp sdx-20110317.kit sdx.kit
 Make a temporary copy of the Tcl runtime
 
 ```shell
-cp tclkit-8.6.13 ./tclkit
-```
-or
-```shell
-cp tclkit-8.6.13.exe ./tclkit.exe
+cp tclkit-8.6.13{.exe} ./tclkit{.exe}
 ```
 
 Make the native SDX executable
 
 ```shell
 ./tclkit sdx.kit unwrap sdx.kit
-./tclkit sdx.kit wrap sdx -runtime tclkit-8.6.13
+./tclkit sdx.kit wrap sdx -runtime tclkit-8.6.13{.exe}
 ```
 
 _Due to the Windows exeutable file locking the runtime being assembled into a Starpack must be different from the one running sdx.kit_
