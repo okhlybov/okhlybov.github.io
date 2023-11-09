@@ -53,8 +53,10 @@ Make the native SDX executable
 ./tclkit sdx.kit wrap sdx -runtime tclkit-8.6.13{.exe}
 ```
 
-_Due to the Windows exeutable file locking the runtime being assembled into a Starpack must be different from the one running sdx.kit_
+_Due to the Windows executable file locking the runtime being assembled into a Starpack must be different from the one running sdx.kit_
 
 ## More options
 
-For precanned Tcl wrappers refer to [Freewrap](https://freewrap.dengensys.com/).
+Precanned Tcl wrapper [Freewrap](https://freewrap.dengensys.com/).
+
+[Online KitCreator](http://kitcreator.rkeene.org/kitcreator) service.
