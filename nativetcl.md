@@ -24,7 +24,7 @@ Bootstrap the native Tcl single executable
 
 ```shell
 build/pre.sh
-KC_TCL_STATICPKGS=1 KITCREATOR_PKGS=" " ./kitcreator --enable-kit-storage=cvfs --disable-threads 
+KC_TCL_STATICPKGS=1 KITCREATOR_PKGS="mk4tcl" ./kitcreator --enable-kit-storage=cvfs --disable-threads 
 ```
 
 This yields a minimal platform-specific self-contained Tcl runtime (the Tclkit itself) `tclkit-$version` (`tclkit-$version.exe` on Windows).
@@ -33,7 +33,7 @@ As of writing time the version is `8.6.13` thich is used from now on.
 
 ## [SDX](https://wiki.tcl-lang.org/page/sdx) bootstrap
 
-Get a recent SDX package
+Get a latest SDX package
 
 ```shell
 wget https://chiselapp.com/user/aspect/repository/sdx/uv/sdx-20110317.kit
@@ -58,3 +58,7 @@ Make the native SDX executable
 ```
 
 _Due to the Windows exeutable file locking the runtime being assembled into a Starpack must be different from the one running sdx.kit_
+
+## More options
+
+For precanned Tcl wrappers refer to [Freewrap](https://freewrap.dengensys.com/).
