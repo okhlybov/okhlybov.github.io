@@ -9,6 +9,14 @@ _This document captures the state of things as of late 2023._
 - Development environment for Linux
 - Native Tcl
 
+### Ubuntu 22.04 (WSL)
+
+Install required packages
+
+```shell
+sudo apt install wget git gcc g++ autoconf make xorg-dev gcc-mingw-w64-x86-64-win32 g++-mingw-w64-x86-64-win32
+```
+
 ## Set up [KitCreator](https://kitcreator.rkeene.org)
 
 Clone a fork of the [original KitCreator repository](https://github.com/rkeene/KitCreator) with [Tcl/Tk 8.6.13](https://www.tcl.tk/software/tcltk/8.6.html) updates
@@ -32,7 +40,7 @@ Bootstrap the Linux-native Tclkit
 
 ```shell
 ./kitcreator clean
-KITCREATOR_PKGS="mk4tcl" ./kitcreator --enable-kit-storage=mk4
+KITCREATOR_PKGS=" mk4tcl " ./kitcreator --enable-kit-storage=mk4
 mv tclkit-* tclkit0
 ```
 
@@ -40,17 +48,17 @@ mv tclkit-* tclkit0
 
 ```shell
 ./kitcreator clean
-KC_TCL_STATICPKGS=1 KITCREATOR_PKGS="mk4tcl" ./kitcreator --enable-kit-storage=mk4
+KC_TCL_STATICPKGS=1 KITCREATOR_PKGS=" mk4tcl " ./kitcreator --enable-kit-storage=mk4
 mv tclkit-* tclkit
 ```
 
 ## Build native Windows Tclkit with system-hosted MinGW cross-complier
 
-_Passing -static flag forces static linking of the winpthreads library which is otherwise linked as DLL even if --disable-shared is specified._
+_Passing -static flag forces static linking of the winpthreads library (when using the POSIX-threaded MinGW toolchain) which is otherwise linked as DLL even if --disable-shared is specified._
 
 ```shell
 ./kitcreator clean
-TCLKIT=$(pwd)/tclkit0 KC_TCL_STATICPKGS=1 KC_KITSH_LDFLAGS=-static KITCREATOR_PKGS="mk4tcl" build/make-kit-win64 --enable-kit-storage=mk4
+TCLKIT=$(pwd)/tclkit0 KC_TCL_STATICPKGS=1 KC_KITSH_LDFLAGS=-static KITCREATOR_PKGS=" mk4tcl " build/make-kit-win64 --enable-kit-storage=mk4
 mv tclkit-* tclkit.exe
 ```
 
@@ -92,7 +100,7 @@ _Due to the Windows executable file locking the runtime executable being assembl
 
 ```shell
 ./kitcreator clean
-KC_TCL_STATICPKGS=1 STATICTK=1 KITCREATOR_PKGS="mk4tcl tk" ./kitcreator --enable-kit-storage=mk4
+KC_TCL_STATICPKGS=1 STATICTK=1 KITCREATOR_PKGS=" mk4tcl tk " ./kitcreator --enable-kit-storage=mk4
 mv tclkit-* wishkit
 ```
 
@@ -100,7 +108,7 @@ mv tclkit-* wishkit
 
 ```shell
 ./kitcreator clean
-TCLKIT=$(pwd)/tclkit0 KC_TCL_STATICPKGS=1 KC_KITSH_LDFLAGS=-static STATICTK=1 KITCREATOR_PKGS="mk4tcl tk" build/make-kit-win64 --enable-kit-storage=mk4
+TCLKIT=$(pwd)/tclkit0 KC_TCL_STATICPKGS=1 KC_KITSH_LDFLAGS=-static STATICTK=1 KITCREATOR_PKGS=" mk4tcl tk " build/make-kit-win64 --enable-kit-storage=mk4
 mv tclkit-* wishkit.exe
 ```
 
