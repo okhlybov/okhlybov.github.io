@@ -20,19 +20,23 @@ _The original repository is slightly dated yet still usable as a fallback._
 
 ## [Tclkit](https://wiki.tcl-lang.org/page/Tclkit) bootstrap
 
+Prepare the repository
+
+```shell
+build/pre.sh
+```
+
 Bootstrap the native Tcl single executable
 
 ### Native Linux (UNIX)
 
 ```shell
-build/pre.sh
 KC_TCL_STATICPKGS=1 STATICTK=1 KC_KITSH_LDFLAGS=-static KITCREATOR_PKGS="mk4tcl" ./kitcreator --enable-kit-storage=mk4
 ```
 
 ### Native MinGW from [MSYS2](https://www.msys2.org/)
 
 ```shell
-build/pre.sh
 KC_TCL_STATICPKGS=1 STATICTK=1 KC_KITSH_LDFLAGS=-static KITCREATOR_PKGS="mk4tcl" ./kitcreator --enable-kit-storage=mk4
 ```
 
@@ -64,7 +68,7 @@ Make the native SDX executable
 ```shell
 ./tclkit sdx.kit unwrap sdx.kit
 ./tclkit sdx.kit wrap sdx.{exe} -runtime tclkit-8.6.13{.exe}
-'``
+```
 
 Now there should be a single executable `sdx.{exe}`
 
