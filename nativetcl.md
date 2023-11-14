@@ -40,13 +40,23 @@ KC_TCL_STATICPKGS=1 STATICTK=1 KC_KITSH_LDFLAGS=-static KITCREATOR_PKGS="mk4tcl"
 KC_TCL_STATICPKGS=1 STATICTK=1 KC_KITSH_LDFLAGS=-static KITCREATOR_PKGS="mk4tcl" ./kitcreator --enable-kit-storage=mk4
 ```
 
-This yields a minimal platform-specific self-contained Tcl runtime (the Tclkit itself) `tclkit-$version` (`tclkit-$version.exe` on Windows).
+_This should work for any MSYS2-hosted MinGW flavour (MinGW32, MinGW64, UCRT)_
+
+### Linux-hosted MinGW
+
+```shell
+KC_TCL_STATICPKGS=1 STATICTK=1 KC_KITSH_LDFLAGS=-static KITCREATOR_PKGS=" mk4tcl " build/make-kit-win64 --enable-kit-storage=mk4
+```
+
+This yields a platform-specific self-contained Tcl runtime (the Tclkit itself) `tclkit-$version` (`tclkit-$version.exe` on Windows).
 
 As of writing time the version is `8.6.13` which is assumed from now on.
 
+_More packages from this repository which are to be included into the Tclkit should be put into **KITCREATOR_PKGS**._
+
 ## [SDX](https://wiki.tcl-lang.org/page/sdx) bootstrap
 
-SDX is a tool for managing starkits/starpacks.
+SDX is a tool for managing Starkits/Starpacks.
 
 Get a latest SDX package
 
